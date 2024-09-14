@@ -4,8 +4,15 @@ import router from './routes/routes.js';
 //CREAR LA APP
 const app = express();
 
+//CARPETA PUBLICA
+app.use(express.static('public'))
+
 //ROUTING
-app.use('/',router);
+app.use('/auth',router);
+
+//HABILITAR PUG
+app.set('view engine', 'pug');
+app.set('views', './views');
 
 //DEFINIR UN PUERTO Y ARRANCAR EL PROYECTO
 const port = 3000;
