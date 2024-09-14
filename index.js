@@ -1,9 +1,18 @@
 import express from 'express';
 import router from './routes/routes.js';
+import db from './config/db.js'
 
 //CREAR LA APP
 const app = express();
 
+//CONEXION A LA BASE DE DATOS
+try{
+    await db.authenticate();
+    console.log('Conexion Correcta a la base de datos');
+} catch (error){
+    console.log(error)
+}
+ 
 //CARPETA PUBLICA
 app.use(express.static('public'))
 
