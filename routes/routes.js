@@ -1,5 +1,5 @@
 import express from "express";
-import { formularioLogin, formularioRegistro } from "../controller/controller.js";
+import { formularioLogin, formularioOlvidePassword, formularioRegistro } from "../controller/controller.js";
 
 //VARIABLES
 const router = express.Router();
@@ -7,6 +7,7 @@ const router = express.Router();
 //ROUTING
 router.get('/login', formularioLogin);
 router.get('/registro',formularioRegistro);
+router.get('/olvide-password',formularioOlvidePassword);
 
 
 
